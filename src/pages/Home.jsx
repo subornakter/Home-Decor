@@ -3,13 +3,15 @@ import { Link } from 'react-router';
 import useProducts from '../Hooks/useProducts';
 import ProductCard from '../components/ProductCard';
 import SkeletonLoader from '../components/SkeletonLoader';
+import HeroSection from '../components/HeroSection';
 const Home = () => {
       const { loading, error, products } = useProducts()
-
+         
   const featuredProducts = products.slice(0, 6)
     return (
-        
         <div>
+        <HeroSection></HeroSection>
+
              <div className='flex justify-between py-5 items-center'>
         <h1 className='text-3xl font-semibold'>Featured Products</h1>
         <Link className='btn btn-outline' to='/products'>
